@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Felix the fish</title>
+  <style>
+    /* Style for the background animation */
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+      animation: bg-animation 10s infinite;
+    }
+
+    @keyframes bg-animation {
+      0% { background-color: red; }
+      15% { background-color: yellow; }
+      30% { background-color: green; }
+      45% { background-color: blue; }
+      60% { background-color: purple; }
+      75% { background-color: pink; }
+      90% { background-color: brown; }
+      100% { background-color: red; }
+    }
+
+    h1 {
+      color: white;
+      text-shadow: 1px 1px 4px black;
+    }
+
+    img {
+      max-width: 300px;
+      margin: 20px 0;
+      cursor: pointer; /* Changes the cursor to indicate a clickable image */
+    }
+  </style>
+</head>
+<body>
+  <h1>Felix the fish</h1>
+  <img id="fish-gif" src="image1.gif" alt="Sample GIF">
+
+  <!-- Audio element that is initially paused -->
+  <audio id="background-audio" loop>
+    <source src="Fish sounds.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    // Select the audio and GIF elements
+    const audio = document.getElementById('background-audio');
+    const fishGif = document.getElementById('fish-gif');
+
+    // Event listener to play audio when the GIF is clicked
+    fishGif.addEventListener('click', function() {
+      if (audio.paused) {
+        audio.play(); // Start the audio on loop
+      } else {
+        audio.pause(); // Pause the audio if it's already playing
+      }
+    });
+  </script>
+</body>
+</html>
+
+
